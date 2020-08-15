@@ -68,6 +68,13 @@ services:
       POSTGRES_HOST_AUTH_METHOD: 'trust'
     volumes:
       - 'sentry-postgres:/var/lib/postgresql/data'
+  postgres-wale:
+    << : *restart_policy
+    build: timescaledb-wale
+    volumes:
+      - 'sentry-postgres:/var/lib/postgresql/data'
+    env_file:
+      - 'postgres-wale-s3.env'
   zookeeper:
     << : *restart_policy
     image: 'confluentinc/cp-zookeeper:5.5.0'

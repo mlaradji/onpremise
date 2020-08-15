@@ -1,0 +1,3 @@
+[submodule "timescaledb-wale"]
+	path = timescaledb-wale
+	url = https://github.com/mlaradji/timescaledb-wale.git
