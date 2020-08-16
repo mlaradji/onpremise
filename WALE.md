@@ -1,0 +1,1 @@
+To configure WAL-E, update the file `postgres-wale-s3.env` with your s3 credentials.
