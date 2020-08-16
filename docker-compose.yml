@@ -73,7 +73,6 @@ services:
     - "-carchive_command='wget postgres-wale/wal-push/%f -O -'"
     - '-cwal_level=replica'
     - '-carchive_mode=on'
-    - '&& apt-get install wget -y' # `wget` does not exist in the postgres image, so we install it here. FIXME: This seems hacky and prone to problems.
   postgres-wale:
     << : *restart_policy
     build: timescaledb-wale
