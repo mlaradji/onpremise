@@ -77,7 +77,7 @@ services:
     << : *restart_policy
     build: timescaledb-wale
     env_file:
-      - postgres-wale.env
+      - postgres-walg.env
     volumes:
       - 'sentry-postgres:/var/lib/postgresql/data'
   zookeeper:
