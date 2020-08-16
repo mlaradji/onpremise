@@ -63,11 +63,17 @@ services:
         hard: 10032
   postgres:
     << : *restart_policy
-    image: 'postgres:9.6'
+    build: postgres
     environment:
       POSTGRES_HOST_AUTH_METHOD: 'trust'
     volumes:
       - 'sentry-postgres:/var/lib/postgresql/data'
+    command:
+    - "postgres"
+    - "-carchive_command='wget postgres-wale/wal-push/%f -O -'"
+    - '-cwal_level=replica'
+    - '-carchive_mode=on'
+    - '&& apt-get install wget -y' # `wget` does not exist in the postgres image, so we install it here. FIXME: This seems hacky and prone to problems.
   postgres-wale:
     << : *restart_policy
     build: timescaledb-wale
