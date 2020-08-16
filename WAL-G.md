@@ -1,0 +1,1 @@
+To configure WAL-G, insert S3 credentials in `~/AWS-CREDS`. 

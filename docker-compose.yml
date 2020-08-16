@@ -76,10 +76,10 @@ services:
   postgres-wale:
     << : *restart_policy
     build: timescaledb-wale
+    env_file:
+      - postgres-wale.env
     volumes:
       - 'sentry-postgres:/var/lib/postgresql/data'
-    env_file:
-      - 'postgres-wale.env'
   zookeeper:
     << : *restart_policy
     image: 'confluentinc/cp-zookeeper:5.5.0'
