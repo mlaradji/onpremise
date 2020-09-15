@@ -4,12 +4,12 @@ Official bootstrap for running your own [Sentry](https://sentry.io/) with [Docke
 
 ## Requirements
 
- * Docker 19.03.6+
- * Compose 1.24.1+
+- Docker 19.03.6+
+- Compose 1.24.1+
 
 ## Minimum Hardware Requirements:
 
- * You need at least 2400MB RAM
+- You need at least 2400MB RAM
 
 ## Setup
 
@@ -23,9 +23,9 @@ There may need to be modifications to the included example config files (`sentry
 
 The recommended way to customize your configuration is using the files below, in that order:
 
- * `config.yml`
- * `sentry.conf.py`
- * `.env` w/ environment variables
+- `config.yml`
+- `sentry.conf.py`
+- `.env` w/ environment variables
 
 We currently support a very minimal set of environment variables to promote other means of configuration.
 
@@ -65,10 +65,9 @@ For more information regarding updating your Sentry installation, please visit [
 
 ## Resources
 
- * [Documentation](https://develop.sentry.dev/self-hosted/)
- * [Bug Tracker](https://github.com/getsentry/onpremise/issues)
- * [Community Forums](https://forum.sentry.io/c/on-premise)
-
+- [Documentation](https://develop.sentry.dev/self-hosted/)
+- [Bug Tracker](https://github.com/getsentry/onpremise/issues)
+- [Community Forums](https://forum.sentry.io/c/on-premise)
 
 [build-status-image]: https://github.com/getsentry/onpremise/workflows/test/badge.svg
 [build-status-url]: https://git.io/JUYkh
