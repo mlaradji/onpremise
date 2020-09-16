@@ -67,7 +67,7 @@ target/
 .python-version
 
 # https://docs.docker.com/compose/extends/
-docker-compose.override.yml
+!docker-compose.override.yml
 
 *.tar
 data/
@@ -81,4 +81,5 @@ sentry/requirements.txt
 relay/credentials.json
 relay/config.yml
 symbolicator/config.yml
-postgres-wale.env
+postgres-walg.env
+clickhouse-backup.env

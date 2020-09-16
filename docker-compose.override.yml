@@ -1,0 +1,25 @@
+version: "3.4"
+x-restart-policy: &restart_policy
+  restart: unless-stopped
+services:
+  postgres-walg:
+    <<: *restart_policy
+    build: timescaledb-wale
+    env_file:
+      - postgres-walg.env
+    volumes:
+      - "sentry-postgres:/var/lib/postgresql/data"
+  clickhouse-backup:
+    <<: *restart_policy
+    image: "alexakulov/clickhouse-backup:master"
+    command: "server"
+    env_file:
+      - "clickhouse-backup.env"
+    ulimits:
+      nofile:
+        soft: 262144
+        hard: 262144
+    ports:
+      - 7171:7171
+    volumes:
+      - "sentry-clickhouse:/var/lib/clickhouse"

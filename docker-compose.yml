@@ -63,16 +63,9 @@ services:
         hard: 10032
   postgres:
     << : *restart_policy
-    build: postgres
+    image: 'postgres:9.6'
     environment:
       POSTGRES_HOST_AUTH_METHOD: 'trust'
-    volumes:
-      - 'sentry-postgres:/var/lib/postgresql/data'
-  postgres-wale:
-    << : *restart_policy
-    build: timescaledb-wale
-    env_file:
-      - postgres-walg.env
     volumes:
       - 'sentry-postgres:/var/lib/postgresql/data'
   zookeeper:
